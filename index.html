@@ -1,1 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vorkimira | miroslava</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background: #0a0a0a;
+            font-family: 'Courier New', 'Fira Code', monospace;
+            color: #00ff41;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Водяной знак */
+        body::before {
+            content: "⛧ ANONYMOUS ⛧ VORKIMIRA ⛧";
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: rgba(0, 255, 65, 0.15);
+            font-family: monospace;
+            z-index: 999;
+            pointer-events: none;
+            white-space: pre;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        body::after {
+            content: "/// V ////";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-25deg);
+            font-size: 80px;
+            color: rgba(0, 255, 65, 0.03);
+            font-family: monospace;
+            z-index: 999;
+            pointer-events: none;
+            white-space: pre;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Telegram боковая кнопка */
+        .telegram-btn {
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            background: #0088cc;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            font-family: monospace;
+            box-shadow: 0 0 15px rgba(0,136,204,0.5);
+            transition: 0.3s;
+            border: 1px solid #00ff41;
+        }
+
+        .telegram-btn:hover {
+            transform: scale(1.05);
+            background: #006699;
+            box-shadow: 0 0 25px #00ff41;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Шапка */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #00ff41;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 4px;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        h1 span {
+            font-size: 2rem;
+        }
+
+        .owner {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #00cc33;
+        }
+
+        /* Сетка постов */
+        .posts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .post-card {
+            background: rgba(0, 30, 0, 0.7);
+            border: 1px solid #00ff41;
+            border-radius: 15px;
+            padding: 20px;
+            transition: 0.3s;
+            backdrop-filter: blur(2px);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0,255,65,0.3);
+            background: rgba(0, 40, 0, 0.9);
+        }
+
+        .post-title {
+            font-size: 1.8rem;
+            color: #00ff41;
+            margin-bottom: 10px;
+        }
+
+        .post-date {
+            font-size: 0.8rem;
+            color: #88ff88;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .post-excerpt {
+            color: #ccffcc;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: #00ff41;
+            text-decoration: none;
+            border: 1px solid #00ff41;
+            padding: 8px 18px;
+            border-radius: 30px;
+            display: inline-block;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            background: #00ff41;
+            color: black;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #00ff41;
+            color: #00aa33;
+            font-size: 0.8rem;
+        }
+
+        /* Смайлики и анимации */
+        .emoji {
+            font-size: 1.2rem;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .status {
+            animation: blink 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://t.me/gmailmiroslava" target="_blank" class="telegram-btn">
+    📱 ТГ: @gmailmiroslava
+</a>
+
+<div class="container">
+    <header>
+        <h1>VORKIMIRA <span>⛧</span></h1>
+        <div class="owner">
+            👤 Владелец: <strong>miroslava</strong> 🔥
+        </div>
+        <div class="status">
+            🟢 ONLINE | 🕶️ анонимный режим
+        </div>
+    </header>
+
+    <div class="posts-grid">
+        <!-- ПОСТ 1 -->
+        <div class="post-card">
+            <div class="post-title">📢 Первый пост! 🚀</div>
+            <div class="post-date">🗓️ 17 мая 2026 | ✍️ miroslava</div>
+            <div class="post-excerpt">
+                🔥 Привет всем! Это мой новый блог. Здесь будут посты на разные темы. Оставайтесь на связи! <br>
+                😈 Следите за обновлениями...
+            </div>
+            <a href="post1.html" class="read-more">📖 Читать полностью →</a>
+        </div>
+
+        <!-- ПОСТ 2 (пример) -->
+        <div class="post-card">
+            <div class="post-title">🕶️ OSINT & Анонимность</div>
+            <div class="post-date">🗓️ 17 мая 2026 | ✍️ miroslava</div>
+            <div class="post-excerpt">
+                💡 OSINT — это анализ публичных данных. В этом посте расскажу основы и инструменты. <br>
+                🛡️ Безопасность прежде всего...
+            </div>
+            <a href="post2.html" class="read-more">📖 Читать полностью →</a>
+        </div>
+
+        <!-- Здесь будут новые посты. Просто копируй блок выше и меняй текст -->
+    </div>
+
+    <footer>
+        <p>© 2026 vorkimira | ⚡ Все права защищены | 🧩 <a href="https://github.com/miroslavamirnaa191-byte/vorkimira" style="color:#00ff41;">GitHub</a></p>
+        <p>😈 🤘 🕶️ 🔥 💀 🐉</p>
+    </footer>
+</div>
+
+</body>
+</html>
